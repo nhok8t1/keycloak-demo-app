@@ -4,7 +4,7 @@ export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
-  target: 'static',
+  target: 'server',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -60,16 +60,12 @@ export default {
 
   proxy: {
     '/auth': {
-      target: 'http://localhost:8080'
+      target: 'http://keycloak:8080'
     }
   },
 
   router: {
     middleware: ['auth']
-  },
-
-  server: {
-    port: 4500,
   },
 
   auth: {

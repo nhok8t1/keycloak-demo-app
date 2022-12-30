@@ -51,7 +51,7 @@
       <v-toolbar-title>{{ title }}</v-toolbar-title>
       <v-spacer />
       <div v-if="$auth.loggedIn">
-        {{ $auth.user.preferred_username }}
+        {{ $auth.user.email }}
         <v-btn
           text
           @click="$auth.logout()"
